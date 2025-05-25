@@ -5,108 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>From Monaco to Maribor: The Global Impact of F1</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
   <header style="background: linear-gradient(90deg, #000000, #cf0000); padding: 60px 20px; text-align: center; color: white;">
-  <h1 style="font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">The Impact of F1 in the World</h1>
-  <p class="subtitle" style="font-style: italic; font-size: 1.2rem; margin: 0;">How Formula 1 shapes our societies, economies, and environment across the globe</p>
-</header>
+    <h1 style="font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">The Impact of F1 in the World</h1>
+    <p class="subtitle" style="font-style: italic; font-size: 1.2rem; margin: 0;">How Formula 1 shapes our societies, economies, and environment across the globe</p>
+  </header>
 
   <div class="container">
     <section id="intro" class="article">
-  <h2>F1 2025 Interactive Race Map</h2>
-  <div id="map" style="height: 600px; width: 100%; margin-bottom: 30px; border-radius: 10px;"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script>
-    const races = [
-  { name: "Bahrain GP – Mar 2", lat: 26.0325, lng: 50.5106 },
-  { name: "Saudi Arabian GP – Mar 9", lat: 21.6319, lng: 39.1044 },
-  { name: "Australian GP – Mar 23", lat: -37.8497, lng: 144.968 },
-  { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
-  { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
-  { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
-  { name: "Emilia Romagna GP – May 18", lat: 44.3444, lng: 11.7167 },
-  { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
-  { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
-  { name: "Canadian GP – Jun 15", lat: 45.5017, lng: -73.522 },
-  { name: "Austrian GP – Jun 29", lat: 47.2197, lng: 14.7647 },
-  { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
-  { name: "Hungarian GP – Jul 20", lat: 47.5789, lng: 19.2486 },
-  { name: "Belgian GP – Jul 27", lat: 50.4372, lng: 5.9714 },
-  { name: "Dutch GP – Aug 24", lat: 52.3886, lng: 4.5403 },
-  { name: "Italian GP – Aug 31", lat: 45.6156, lng: 9.2811 },
-  { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
-  { name: "Singapore GP – Sep 21", lat: 1.2914, lng: 103.8644 },
-  { name: "US GP (Austin) – Oct 5", lat: 30.1328, lng: -97.6411 },
-  { name: "Mexican GP – Oct 26", lat: 19.4042, lng: -99.0907 },
-  { name: "Brazilian GP – Nov 2", lat: -23.7036, lng: -46.6997 },
-  { name: "Las Vegas GP – Nov 22", lat: 36.1683, lng: -115.1522 },
-  { name: "Qatar GP – Nov 29", lat: 25.49, lng: 51.4542 },
-  { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
-];
-    const map = L.map('map').setView([20, 0], 2);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-    races.forEach(race => {
-      L.marker([race.lat, race.lng])
-        .addTo(map)
-        .bindPopup(`<b>${race.name}</b>`);
-    });
-  </script>
+      <h2>F1 2025 Interactive Race Map</h2>
+      <div id="map" style="height: 600px; width: 100%; margin-bottom: 30px; border-radius: 10px;"></div>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script>
+        const races = [
+          { name: "Bahrain GP – Mar 2", lat: 26.0325, lng: 50.5106 },
+          { name: "Saudi Arabian GP – Mar 9", lat: 21.6319, lng: 39.1044 },
+          { name: "Australian GP – Mar 23", lat: -37.8497, lng: 144.968 },
+          { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
+          { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
+          { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
+          { name: "Emilia Romagna GP – May 18", lat: 44.3444, lng: 11.7167 },
+          { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
+          { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
+          { name: "Canadian GP – Jun 15", lat: 45.5017, lng: -73.522 },
+          { name: "Austrian GP – Jun 29", lat: 47.2197, lng: 14.7647 },
+          { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
+          { name: "Hungarian GP – Jul 20", lat: 47.5789, lng: 19.2486 },
+          { name: "Belgian GP – Jul 27", lat: 50.4372, lng: 5.9714 },
+          { name: "Dutch GP – Aug 24", lat: 52.3886, lng: 4.5403 },
+          { name: "Italian GP – Aug 31", lat: 45.6156, lng: 9.2811 },
+          { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
+          { name: "Singapore GP – Sep 21", lat: 1.2914, lng: 103.8644 },
+          { name: "US GP (Austin) – Oct 5", lat: 30.1328, lng: -97.6411 },
+          { name: "Mexican GP – Oct 26", lat: 19.4042, lng: -99.0907 },
+          { name: "Brazilian GP – Nov 2", lat: -23.7036, lng: -46.6997 },
+          { name: "Las Vegas GP – Nov 22", lat: 36.1683, lng: -115.1522 },
+          { name: "Qatar GP – Nov 29", lat: 25.49, lng: 51.4542 },
+          { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
+        ];
+        const map = L.map('map').setView([20, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        races.forEach(race => {
+          L.marker([race.lat, race.lng])
+            .addTo(map)
+            .bindPopup(`<b>${race.name}</b>`);
+        });
+      </script>
+
       <h2>1. Introduction: What Is Formula 1 Today?</h2>
-<div class="image-text-section">
-  <div class="text-side">
-    <p>Formula 1 spans the entire globe, with races scheduled across every continent except Antarctica. From the bustling streets of Singapore to the sweeping curves of Silverstone, the sport brings together fans, cultures, and economies in one of the most logistically demanding sporting events in the world.</p>
-    <p>Each race weekend spans four intense days — Thursday for media and setup, Friday for practice, Saturday for qualifying, and Sunday for the Grand Prix itself. These events generate massive economic surges in host cities, particularly in urban street circuits like Monaco, Baku, and Las Vegas, where regular roads are transformed into high-speed battlefields. Hotels fill, tourism spikes, and local businesses see record profits — but this comes with environmental and logistical costs.</p>
-    <p>The construction of street circuits often involves weeks of preparation and extensive temporary infrastructure, increasing local traffic disruption and emissions. However, in recent years, Formula 1 and host cities have implemented more sustainable strategies: from electric support vehicles and hybrid F1 engines to carbon offset programs and reusable materials for barriers and stands. These steps, though gradual, show a growing commitment to minimizing the environmental footprint while keeping the thrill of racing alive.</p>
-  </div>
-  <img class="image-side" src="f1-map-2025.jpg" alt="F1 2025 Race Calendar Map">
-</div>
+      <div class="image-text-section">
+        <div class="text-side">
+          <p>Formula 1 spans the entire globe, with races scheduled across every continent except Antarctica...</p>
+          <p>Each race weekend spans four intense days...</p>
+          <p>Street circuits require weeks of prep and extensive infrastructure. But sustainable strategies are emerging: hybrid F1 engines, reusable materials, electric support vehicles, and carbon offset programs.</p>
+        </div>
         <img class="image-side" src="f1-map-2025.jpg" alt="F1 2025 Race Calendar Map">
       </div>
     </section>
 
     <section id="monaco" class="article">
-  <h2>2. Four Days That Move a Nation</h2>
-  <div class="image-text-section">
-    <div class="text-side">
-      <p>Each Formula 1 Grand Prix is more than a race — it's a tightly choreographed four-day festival. Thursday begins with media duties and track inspections. Friday is reserved for two practice sessions, giving teams a first taste of real conditions. Saturday delivers qualifying, determining the race grid. Sunday is the climax, drawing global television audiences and live crowds into the hundreds of thousands.</p>
-      <p>This structure turns each host city into a temporary motorsport capital, bringing logistical challenges and requiring precise urban coordination. From transportation systems to event security and tourism management, local governments and event organizers must work in harmony to ensure success.</p>
-    </div>
-    <img class="image-side" src="f1-weekend.jpg" alt="Formula 1 Weekend Schedule">
-  </div>
-</section>
-
-<section id="urban" class="article">
-  <h2>3. The Impact of Street Circuits</h2>
-  <div class="image-text-section">
-    <div class="text-side">
-      <p>Urban circuits such as Monaco, Baku, and Singapore present unique opportunities and challenges. These races are held on regular city streets, which must be closed to public traffic, modified with safety barriers, grandstands, and paddock zones, and then restored after the event. While these settings provide stunning visuals and bring F1 closer to the people, they also create significant urban disruption.</p>
-      <p>Residents often deal with weeks of road closures, noise, and altered public services. However, the influx of fans and international exposure can provide long-term economic benefits, raising the city's global profile and funding future infrastructure improvements.</p>
-    </div>
-    <img class="image-side" src="street-circuit.jpg" alt="Monaco Street Circuit Overview">
-  </div>
-</section>
-
-<section id="pollution" class="article">
-  <h2>4. Pollution and Progress</h2>
-  <div class="image-text-section">
-    <div class="text-side">
-      <p>The environmental cost of Formula 1, especially in dense city races, includes increased air and noise pollution, carbon emissions from logistics, and waste generated by massive crowds. In the past, these issues received limited attention. Today, however, the conversation has shifted dramatically.</p>
-      <p>Formula 1’s environmental strategy aims for net-zero carbon emissions by 2030. Initiatives include carbon-neutral logistics, greener fuels, hybrid engines, and reduced single-use plastics at events. Several cities have started using electric shuttles, low-emission generators, and circular waste systems to minimize their environmental impact while still benefiting from the global attention F1 brings.</p>
-    </div>
-    <img class="image-side" src="eco-f1.jpg" alt="Sustainability in Formula 1">
-  </div>
-</section>
-
-    <section id="economy" class="article">
-      <h2>3. Economic Engines: The $$$ Behind the GPs</h2>
+      <h2>2. Four Days That Move a Nation</h2>
       <div class="image-text-section">
         <div class="text-side">
-          <p>Hosting a Formula 1 race can inject hundreds of millions into a national economy. Countries like Singapore, Bahrain, and Azerbaijan use the event to boost international visibility and attract long-term tourism and investment.</p>
-          <p>For example, the Singapore GP is estimated to contribute more than $150 million annually to the economy, creating thousands of jobs in hospitality, transport, and media. The event also brings major sponsorships and high-end brand activations.</p>
+          <p>Each Grand Prix is a 4-day global event: Media day, Practice, Qualifying, and Race day. Cities become motorsport hubs with huge crowds and media coverage.</p>
+          <p>This structure requires precise coordination from transport to tourism — a temporary transformation for the host country.</p>
+        </div>
+        <img class="image-side" src="f1-weekend.jpg" alt="Formula 1 Weekend Schedule">
+      </div>
+    </section>
+
+    <section id="urban" class="article">
+      <h2>3. The Impact of Street Circuits</h2>
+      <div class="image-text-section">
+        <div class="text-side">
+          <p>Urban circuits like Monaco or Singapore use public roads, disrupting traffic and daily life. Yet they bring tourists, press, and long-term infrastructure improvements.</p>
+        </div>
+        <img class="image-side" src="street-circuit.jpg" alt="Monaco Street Circuit Overview">
+      </div>
+    </section>
+
+    <section id="pollution" class="article">
+      <h2>4. Pollution and Progress</h2>
+      <div class="image-text-section">
+        <div class="text-side">
+          <p>Formula 1’s environmental footprint is large: carbon emissions, noise, waste. But it’s evolving.</p>
+          <p>The sport aims for net-zero emissions by 2030 through sustainable fuels, hybrid engines, reduced plastic use, and cleaner logistics.</p>
+        </div>
+        <img class="image-side" src="eco-f1.jpg" alt="Sustainability in Formula 1">
+      </div>
+    </section>
+
+    <section id="economy" class="article">
+      <h2>5. Economic Engines: The $$$ Behind the GPs</h2>
+      <div class="image-text-section">
+        <div class="text-side">
+          <p>Races generate hundreds of millions for local economies. Singapore earns $150M+ annually with thousands of jobs created in tourism and logistics.</p>
         </div>
         <img class="image-side" src="economic-impact-infographic.png" alt="Economic Impact Infographic">
       </div>
@@ -114,11 +111,10 @@
     </section>
 
     <section id="green" class="article">
-      <h2>4. Greener Tracks? The Sustainability Challenge</h2>
+      <h2>6. Greener Tracks? The Sustainability Challenge</h2>
       <div class="image-text-section">
         <div class="text-side">
-          <p>Despite its fuel-burning history, Formula 1 is making strides toward environmental responsibility. The sport has pledged to achieve net-zero carbon emissions by 2030, supported by innovations in hybrid engines, sustainable fuels, and eco-friendly logistics.</p>
-          <p>F1 also invests in carbon offset programs and research into fully sustainable energy sources. Teams are redesigning their operations to reduce environmental impact while maintaining competitive performance on the track.</p>
+          <p>Hybrid engines, sustainable fuels, and zero-carbon goals are reshaping Formula 1’s future. Teams now consider sustainability part of performance.</p>
         </div>
         <img class="image-side" src="hybrid-vs-petrol.png" alt="Hybrid vs Petrol Diagram">
       </div>
@@ -130,11 +126,11 @@
     </section>
 
     <section id="culture" class="article">
-      <h2>5. Beyond the Podium: Cultural Influence</h2>
+      <h2>7. Beyond the Podium: Cultural Influence</h2>
       <div class="image-text-section">
         <div class="text-side">
-          <p>Formula 1 has transcended sport to become a lifestyle. Thanks to the Netflix series "Drive to Survive," the sport has attracted a new wave of fans, particularly among younger audiences and women. F1 is now a topic of fashion, music, and social media trends.</p>
-          <p>Each race feels like a global festival, with fan zones, live performances, and cultural showcases. Host countries take the opportunity to present their best face to the world, mixing national pride with international attention.</p>
+          <p>Formula 1 has become a lifestyle, thanks to Netflix's “Drive to Survive.” Younger fans, women, and influencers have embraced the sport.</p>
+          <p>Each event includes music, fashion, national culture, and fan experiences — turning a race into a global festival.</p>
         </div>
         <img class="image-side" src="fan-collage.jpg" alt="F1 Fans Worldwide">
       </div>
