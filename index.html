@@ -8,79 +8,82 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-  <header style="background: linear-gradient(90deg, #000000, #cf0000); padding: 60px 20px; text-align: center; color: white;">
-    <h1 style="font-size: 3rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">The Impact of F1 in the World</h1>
-    <p class="subtitle" style="font-style: italic; font-size: 1.2rem; margin: 0;">How Formula 1 shapes our societies, economies, and environment across the globe</p>
-  </header>
+  <div class="white-container">
+    <header class="header-banner">
+      <h1>The Impact of F1 in the World</h1>
+      <p class="subtitle">How Formula 1 shapes our societies, economies, and environment across the globe</p>
+    </header>
 
-  <div class="container">
-    <section id="intro" class="article">
-      <h2>1. A Kickstart to What Formula 1 Is Today</h2>
-      <p>Formula 1 is no longer just a motor race — it’s a global phenomenon. It combines cutting-edge technology, elite engineering, global media, high-stakes competition, and international diplomacy into one of the most complex and captivating sports on Earth. With races in over 20 countries across five continents, F1 is more than speed — it’s influence, innovation, and spectacle rolled into a traveling mega-event. Every Grand Prix is an opportunity for nations to show themselves to the world, for businesses to promote their brands, and for fans to experience drama and adrenaline in real time.</p>
-      <p>From the narrow streets of Monaco to the heat of Qatar, F1 represents a unique fusion of tradition and transformation. The roar of engines, the glint of carbon fiber, and the passionate rivalries make F1 a cultural and economic force — pushing boundaries on and off the track.</p>
-    </section>
+    <!-- Hero Image -->
+    <img src="XPB_1335108_HiRes.jpg" alt="Formula 1 race start" class="hero-img" />
 
-    <section id="days" class="article">
-      <h2>2. Four Days That Move a Nation</h2>
-      <p>Each Formula 1 race isn’t just a Sunday spectacle — it’s a four-day operation that transforms cities, mobilizes thousands, and captivates millions. The weekend begins on Thursday, a media day where drivers meet the press, fans gather for autographs, and teams run system checks. It’s calm before the storm, but already the city begins to buzz.</p>
-      <p>On Friday, engines ignite for the first time. Two free practice sessions allow teams to test setups, tire performance, and gather telemetry under real conditions. This is when strategies start forming. Saturday brings qualifying — a high-intensity battle for pole position. It’s the purest form of driver-against-time competition, and one mistake can ruin an entire weekend.</p>
-      <p>Sunday is race day. Streets are closed, grandstands are packed, helicopters hover above, and the world tunes in. The race unfolds in a few dramatic hours, but its impact ripples far beyond the chequered flag — through the economy, environment, and emotions of each host city.</p>
-    </section>
+    <div class="container">
+      <section id="intro" class="article">
+        <h2>1. A Kickstart to What Formula 1 Is Today</h2>
+        <p>Formula 1 is no longer just a motor race — it’s a global phenomenon. It combines cutting-edge technology, elite engineering, global media, high-stakes competition, and international diplomacy into one of the most complex and captivating sports on Earth. With races in over 20 countries across five continents, F1 is more than speed — it’s influence, innovation, and spectacle rolled into a traveling mega-event. Every Grand Prix is an opportunity for nations to show themselves to the world, for businesses to promote their brands, and for fans to experience drama and adrenaline in real time.</p>
+        <p>From the narrow streets of Monaco to the heat of Qatar, F1 represents a unique fusion of tradition and transformation. The roar of engines, the glint of carbon fiber, and the passionate rivalries make F1 a cultural and economic force — pushing boundaries on and off the track.</p>
+      </section>
 
-    <section id="map" class="article">
-      <h2>3. Where the World Meets</h2>
-      <div id="map" style="height: 600px; width: 100%; border-radius: 10px; margin-bottom: 30px;"></div>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      <script>
-        const races = [
-          { name: "Bahrain GP – Mar 2", lat: 26.0325, lng: 50.5106 },
-          { name: "Saudi Arabian GP – Mar 9", lat: 21.6319, lng: 39.1044 },
-          { name: "Australian GP – Mar 23", lat: -37.8497, lng: 144.968 },
-          { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
-          { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
-          { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
-          { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
-          { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
-          { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
-          { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
-          { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
-        ];
-        const map = L.map('map').setView([20, 0], 2);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-        races.forEach(race => {
-          L.marker([race.lat, race.lng])
-            .addTo(map)
-            .bindPopup(`<b>${race.name}</b>`);
-        });
-      </script>
-    </section>
+      <section id="days" class="article">
+        <h2>2. Four Days That Move a Nation</h2>
+        <p>Each Formula 1 race isn’t just a Sunday spectacle — it’s a four-day operation that transforms cities, mobilizes thousands, and captivates millions. The weekend begins on Thursday, a media day where drivers meet the press, fans gather for autographs, and teams run system checks. It’s calm before the storm, but already the city begins to buzz.</p>
+        <p>On Friday, engines ignite for the first time. Two free practice sessions allow teams to test setups, tire performance, and gather telemetry under real conditions. This is when strategies start forming. Saturday brings qualifying — a high-intensity battle for pole position. It’s the purest form of driver-against-time competition, and one mistake can ruin an entire weekend.</p>
+        <p>Sunday is race day. Streets are closed, grandstands are packed, helicopters hover above, and the world tunes in. The race unfolds in a few dramatic hours, but its impact ripples far beyond the chequered flag — through the economy, environment, and emotions of each host city.</p>
+      </section>
 
-    <section id="street-circuits" class="article">
-      <h2>4. The Impact of Street Circuits</h2>
-      <p>Street circuits are where the beauty and chaos of F1 collide. Races like Monaco, Baku, and Singapore are staged not on dedicated race tracks, but on the everyday roads of vibrant cities. These circuits are visually breathtaking — with cars weaving past casinos, skyscrapers, and sea harbors at 300 km/h — but they also bring weeks of disruption to local life.</p>
-      <p>To prepare for a Grand Prix, streets are closed, barriers installed, curbs modified, lighting adjusted, and entire neighborhoods redirected. Locals face weeks of detours and construction noise. But in return, they witness their city take the global stage. The contrast is stark: one week, it's a normal city center; the next, it’s a roaring coliseum of speed.</p>
-      <div class="image-row">
-        <img src="h3z7fehfip831.jpg" alt="Baku city during normal days">
-        <img src="baku-city-circuit.jpg" alt="Baku during the Formula 1 weekend">
-      </div>
-    </section>
+      <section id="map" class="article">
+        <h2>3. Where the World Meets</h2>
+        <div id="map" class="map-box"></div>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+          const races = [
+            { name: "Bahrain GP – Mar 2", lat: 26.0325, lng: 50.5106 },
+            { name: "Saudi Arabian GP – Mar 9", lat: 21.6319, lng: 39.1044 },
+            { name: "Australian GP – Mar 23", lat: -37.8497, lng: 144.968 },
+            { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
+            { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
+            { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
+            { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
+            { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
+            { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
+            { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
+            { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
+          ];
+          const map = L.map('map').setView([20, 0], 2);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+          }).addTo(map);
+          races.forEach(race => {
+            L.marker([race.lat, race.lng]).addTo(map).bindPopup(`<b>${race.name}</b>`);
+          });
+        </script>
+      </section>
 
-    <section id="pollution" class="article">
-      <h2>5. Pollution and Progress</h2>
-      <p>For years, Formula 1 has faced criticism for its environmental toll — carbon emissions from global freight, fuel use, noise pollution in urban areas, and the thousands of tons of waste left after race weekends. But the sport is evolving. With a commitment to net-zero carbon emissions by 2030, F1 is transforming into a testing ground for sustainability innovation.</p>
-      <p>New hybrid engines are more efficient than ever. Sustainable fuel is being developed to power future races. Events now feature circular waste systems, local food sourcing, and electric shuttles. While there’s a long road ahead, F1 is accelerating toward greener practices without slowing the thrill of racing.</p>
-      <video controls style="width: 100%; border-radius: 10px;">
-        <source src="f1-pollution.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </section>
+      <section id="street-circuits" class="article">
+        <h2>4. The Impact of Street Circuits</h2>
+        <p>Street circuits are where the beauty and chaos of F1 collide. Races like Monaco, Baku, and Singapore are staged not on dedicated race tracks, but on the everyday roads of vibrant cities. These circuits are visually breathtaking — with cars weaving past casinos, skyscrapers, and sea harbors at 300 km/h — but they also bring weeks of disruption to local life.</p>
+        <p>To prepare for a Grand Prix, streets are closed, barriers installed, curbs modified, lighting adjusted, and entire neighborhoods redirected. Locals face weeks of detours and construction noise. But in return, they witness their city take the global stage. The contrast is stark: one week, it's a normal city center; the next, it’s a roaring coliseum of speed.</p>
+        <div class="image-row">
+          <img src="h3z7fehfip831.jpg" alt="Baku city during normal days">
+          <img src="baku-city-circuit.jpg" alt="Baku during the Formula 1 weekend">
+        </div>
+      </section>
+
+      <section id="pollution" class="article">
+        <h2>5. Pollution and Progress</h2>
+        <p>For years, Formula 1 has faced criticism for its environmental toll — carbon emissions from global freight, fuel use, noise pollution in urban areas, and the thousands of tons of waste left after race weekends. But the sport is evolving. With a commitment to net-zero carbon emissions by 2030, F1 is transforming into a testing ground for sustainability innovation.</p>
+        <p>New hybrid engines are more efficient than ever. Sustainable fuel is being developed to power future races. Events now feature circular waste systems, local food sourcing, and electric shuttles. While there’s a long road ahead, F1 is accelerating toward greener practices without slowing the thrill of racing.</p>
+        <video controls class="video-box">
+          <source src="f1-pollution.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+    </div>
+
+    <footer>
+      <p>Project by [Your Name] | Erasmus Multimedia Assignment</p>
+      <p class="ai-note">Some content was enhanced using AI tools. See report for details.</p>
+    </footer>
   </div>
-
-  <footer>
-    <p>Project by [Your Name] | Erasmus Multimedia Assignment</p>
-    <p class="ai-note">Some content was enhanced using AI tools. See report for details.</p>
-  </footer>
 </body>
 </html>
