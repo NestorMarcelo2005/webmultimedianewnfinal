@@ -1,0 +1,94 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+h1, h2 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* Header */
+.site-header {
+  background: #cf0000;
+  color: white;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #000;
+  padding: 0.75em 0;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+main section {
+  margin: 3em 0;
+}
+
+main img,
+main video,
+main iframe {
+  max-width: 100%;
+  margin: 1em 0;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Footer */
+.site-footer {
+  background: #212529;
+  color: #ddd;
+  text-align: center;
+  padding: 2em 0;
+  font-size: 0.9em;
+}
+
+.ai-note {
+  font-style: italic;
+  color: #999;
+}
