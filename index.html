@@ -80,9 +80,14 @@
     }
 
     .image-row img {
-      width: 49%;
+      width: 100%;
       border-radius: 10px;
       object-fit: cover;
+    }
+
+    .image-row > div {
+      flex: 1;
+      text-align: center;
     }
 
     video {
@@ -109,7 +114,7 @@
     <section class="article">
       <img src="XPB_1335108_HiRes.jpg" alt="F1 starting grid" style="width:100%; max-height:400px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
       <h2>1. A Kickstart to What Formula 1 Is Today</h2>
-      <p>Formula 1 is no longer just a motor race — it’s a global phenomenon. It combines cutting-edge technology, elite engineering, global media, high-stakes competition, and international diplomacy into one of the most complex and captivating sports on Earth. With races in over 20 countries across five continents, F1 is more than speed — it’s influence, innovation, and spectacle rolled into a traveling mega-event. Every Grand Prix is an opportunity for nations to show themselves to the world, for businesses to promote their brands, and for fans to experience drama and adrenaline in real time.</p>
+      <p>Formula 1 is no longer just a motor race — it’s a global phenomenon. It combines cutting-edge technology, elite engineering, global media, high-stakes competition, and international diplomacy into one of the most complex and captivating sports on Earth. With races in over 20 countries across five continents, F1 is more than speed — it’s influence, innovation, and spectacle rolled into a traveling mega-event.</p>
       <p>From the narrow streets of Monaco to the heat of Qatar, F1 represents a unique fusion of tradition and transformation. The roar of engines, the glint of carbon fiber, and the passionate rivalries make F1 a cultural and economic force — pushing boundaries on and off the track.</p>
     </section>
 
@@ -127,8 +132,14 @@
       <h2>4. The Impact of Street Circuits</h2>
       <p>Street circuits are where the beauty and chaos of F1 collide. Races like Monaco, Baku, and Singapore are staged not on dedicated race tracks, but on the everyday roads of vibrant cities. These circuits are visually breathtaking — with cars weaving past casinos, skyscrapers, and sea harbors at 300 km/h — but they also bring weeks of disruption to local life. In return, they witness their city take the global stage.</p>
       <div class="image-row">
-        <img src="h3z7fehfip831.jpg" alt="Baku city before the race">
-        <img src="baku-city-circuit.jpg" alt="Baku city during F1 weekend">
+        <div>
+          <img src="h3z7fehfip831.jpg" alt="Baku city before the race">
+          <p><em>Baku on a normal day</em></p>
+        </div>
+        <div>
+          <img src="baku-city-circuit.jpg" alt="Baku city during F1 weekend">
+          <p><em>Baku during an F1 race weekend</em></p>
+        </div>
       </div>
     </section>
 
@@ -139,6 +150,14 @@
         <source src="f1-pollution.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <p style="margin-top:10px;">Watch more on how Formula 1 is tackling emissions:</p>
+      <iframe width="100%" height="400" style="border-radius:10px;" src="https://www.youtube.com/embed/Hd3uqUPM_LI" title="F1’s Sustainable Fuel: Explained" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="article">
+      <h2>6. The Netflix Effect – <em>Drive to Survive</em></h2>
+      <p>Formula 1's global surge in popularity owes a great deal to the Netflix docuseries <em>Drive to Survive</em>. This show pulled back the curtain on the drama behind the scenes — rivalries, heartbreaks, team politics, and personal triumphs. For new fans, it turned F1 from a technical sport into a human story. Since its debut in 2019, the series has introduced millions to the sport, especially in the US and younger demographics.</p>
+      <p>The series highlights that Formula 1 isn't just about who finishes first — it's about strategy, resilience, relationships, and ambition. It has become a cultural bridge that reshaped how audiences perceive motorsport and turned F1 drivers into global celebrities.</p>
     </section>
   </div>
 
@@ -155,16 +174,31 @@
       { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
       { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
       { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
+      { name: "Emilia Romagna GP – May 18", lat: 44.3442, lng: 11.7167 },
       { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
       { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
+      { name: "Canadian GP – Jun 15", lat: 45.5006, lng: -73.5221 },
+      { name: "Austrian GP – Jun 29", lat: 47.2197, lng: 14.7646 },
       { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
+      { name: "Hungarian GP – Jul 20", lat: 47.5789, lng: 19.2481 },
+      { name: "Belgian GP – Jul 27", lat: 50.4372, lng: 5.9714 },
+      { name: "Dutch GP – Aug 24", lat: 52.3883, lng: 4.5402 },
+      { name: "Italian GP – Aug 31", lat: 45.6156, lng: 9.2811 },
       { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
+      { name: "Singapore GP – Sep 21", lat: 1.2914, lng: 103.8643 },
+      { name: "United States GP – Oct 5", lat: 30.1328, lng: -97.6411 },
+      { name: "Mexican GP – Oct 26", lat: 19.4042, lng: -99.0907 },
+      { name: "Brazilian GP – Nov 9", lat: -23.701, lng: -46.6997 },
+      { name: "Las Vegas GP – Nov 22", lat: 36.1162, lng: -115.1742 },
+      { name: "Qatar GP – Nov 30", lat: 25.49, lng: 51.4542 },
       { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
     ];
+
     const map = L.map('map').setView([20, 0], 2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
     races.forEach(race => {
       L.marker([race.lat, race.lng])
         .addTo(map)
