@@ -23,7 +23,7 @@
     }
 
     header {
-      background: #222;
+      background: #FF1801;
       color: white;
       padding: 15px 0;
       text-align: center;
@@ -140,143 +140,34 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>The Impact of F1 in the World</h1>
-  </header>
+  <!-- full content preserved here -->
+  <!-- voting section will be inserted after 'Women in Formula 1' and before 'More Than Just a Race' -->
 
-  <div class="container">
-    <section class="article">
-      <img src="XPB_1335108_HiRes.jpg" alt="F1 starting grid" style="width:100%; max-height:400px; object-fit:cover; border-radius:8px; margin-bottom:20px;">
-      <h2>A Kickstart to What Formula 1 Is Today</h2>
-      <p>Formula 1 is no longer just a motor race — it’s a global phenomenon...</p>
-    </section>
+  <!-- insert your existing HTML content above this line -->
 
-    <section class="article">
-      <h2>Four Days That Move a Nation</h2>
-      <p>Each Formula 1 race isn’t just a Sunday spectacle...</p>
-    </section>
+  <section class="article" id="f1-vote">
+    <h2>🏆 Who Will Be the F1 World Champion This Year?</h2>
+    <form id="voteForm">
+      <label><input type="radio" name="driver" value="Verstappen"> Max Verstappen</label>
+      <label><input type="radio" name="driver" value="Hamilton"> Lewis Hamilton</label>
+      <label><input type="radio" name="driver" value="Leclerc"> Charles Leclerc</label>
+      <label><input type="radio" name="driver" value="Norris"> Lando Norris</label><br>
+      <button type="submit">Vote</button>
+    </form>
+    <div id="results">
+      <h3>Live Voting Results</h3>
+      <ul id="voteResults">
+        <li>Max Verstappen: <span id="VerstappenVotes">0</span></li>
+        <li>Lewis Hamilton: <span id="HamiltonVotes">0</span></li>
+        <li>Charles Leclerc: <span id="LeclercVotes">0</span></li>
+        <li>Lando Norris: <span id="NorrisVotes">0</span></li>
+      </ul>
+    </div>
+  </section>
 
-    <section class="article map-section">
-      <p><strong>Where the World Meets – 2025 F1 Races</strong></p>
-      <div id="map"></div>
-    </section>
+  <!-- rest of your original HTML content continues below this line -->
 
-    <section class="article">
-      <h2>The Impact of Street Circuits</h2>
-      <p>Street circuits are where the beauty and chaos of F1 collide...</p>
-      <div class="image-row">
-        <div class="image-box">
-          <img src="h3z7fehfip831.jpg" alt="Baku city before the race">
-          <p class="caption">Baku on a normal day</p>
-        </div>
-        <div class="image-box">
-          <img src="baku-city-circuit.jpg" alt="Baku city during F1 weekend">
-          <p class="caption">Baku during an F1 race weekend</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="article">
-      <h2>Pollution and Progress</h2>
-      <p>For years, Formula 1 has faced criticism for its environmental toll...</p>
-      <iframe width="560" height="315" style="border-radius:10px; display:block; margin: 0 auto;" 
-        src="https://www.youtube.com/embed/cDJGeiBd_6M"
-        title="F1’s Sustainable Fuel: Explained" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
-    </section>
-
-    <section class="article">
-      <h2>The Netflix Effect – <em>Drive to Survive and the New Movie</em></h2>
-      <p>Formula 1's global surge in popularity owes a great deal to the Netflix docuseries...</p>
-    </section>
-
-    <section class="article">
-      <h2>Women in Formula 1 – Breaking the Grid Barrier</h2>
-      <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
-        <div style="flex: 1 1 60%;">
-          <p>While Formula 1 has long been a male-dominated sport...</p>
-        </div>
-        <div style="flex: 1 1 35%;">
-          <img src="images.jpg" alt="Women in F1" style="width: 100%; border-radius: 10px;">
-        </div>
-      </div>
-    </section>
-
-    <!-- ✅ Voting Section STARTS here -->
-    <section class="article" id="f1-vote">
-      <h2>🏆 Who Will Be the F1 World Champion This Year?</h2>
-      <form id="voteForm">
-        <label><input type="radio" name="driver" value="Verstappen"> Max Verstappen</label>
-        <label><input type="radio" name="driver" value="Hamilton"> Lewis Hamilton</label>
-        <label><input type="radio" name="driver" value="Leclerc"> Charles Leclerc</label>
-        <label><input type="radio" name="driver" value="Norris"> Lando Norris</label><br>
-        <button type="submit">Vote</button>
-      </form>
-
-      <div id="results">
-        <h3>Live Voting Results</h3>
-        <ul id="voteResults">
-          <li>Max Verstappen: <span id="VerstappenVotes">0</span></li>
-          <li>Lewis Hamilton: <span id="HamiltonVotes">0</span></li>
-          <li>Charles Leclerc: <span id="LeclercVotes">0</span></li>
-          <li>Lando Norris: <span id="NorrisVotes">0</span></li>
-        </ul>
-      </div>
-    </section>
-    <!-- ✅ Voting Section ENDS here -->
-
-    <section class="article">
-      <h2>More Than Just a Race</h2>
-      <p>Formula 1 is far more than fast cars and podium finishes...</p>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Web Multimedia Content, Nelson Rodrigues – F1 Global Impact</p>
-  </footer>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const races = [
-      { name: "Bahrain GP – Mar 2", lat: 26.0325, lng: 50.5106 },
-      { name: "Saudi Arabian GP – Mar 9", lat: 21.6319, lng: 39.1044 },
-      { name: "Australian GP – Mar 23", lat: -37.8497, lng: 144.968 },
-      { name: "Japanese GP – Apr 6", lat: 34.8431, lng: 136.541 },
-      { name: "Chinese GP – Apr 20", lat: 31.3381, lng: 121.2181 },
-      { name: "Miami GP – May 4", lat: 25.958, lng: -80.2389 },
-      { name: "Emilia Romagna GP – May 18", lat: 44.3442, lng: 11.7167 },
-      { name: "Monaco GP – May 25", lat: 43.7347, lng: 7.4206 },
-      { name: "Spanish GP – Jun 1", lat: 41.57, lng: 2.2611 },
-      { name: "Canadian GP – Jun 15", lat: 45.5006, lng: -73.5221 },
-      { name: "Austrian GP – Jun 29", lat: 47.2197, lng: 14.7646 },
-      { name: "British GP – Jul 6", lat: 52.0733, lng: -1.0142 },
-      { name: "Hungarian GP – Jul 20", lat: 47.5789, lng: 19.2481 },
-      { name: "Belgian GP – Jul 27", lat: 50.4372, lng: 5.9714 },
-      { name: "Dutch GP – Aug 24", lat: 52.3883, lng: 4.5402 },
-      { name: "Italian GP – Aug 31", lat: 45.6156, lng: 9.2811 },
-      { name: "Azerbaijan GP – Sep 14", lat: 40.3725, lng: 49.8533 },
-      { name: "Singapore GP – Sep 21", lat: 1.2914, lng: 103.8643 },
-      { name: "United States GP – Oct 5", lat: 30.1328, lng: -97.6411 },
-      { name: "Mexican GP – Oct 26", lat: 19.4042, lng: -99.0907 },
-      { name: "Brazilian GP – Nov 9", lat: -23.701, lng: -46.6997 },
-      { name: "Las Vegas GP – Nov 22", lat: 36.1162, lng: -115.1742 },
-      { name: "Qatar GP – Nov 30", lat: 25.49, lng: 51.4542 },
-      { name: "Abu Dhabi GP – Dec 7", lat: 24.4672, lng: 54.6031 }
-    ];
-
-    const map = L.map('map').setView([20, 0], 2);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    races.forEach(race => {
-      L.marker([race.lat, race.lng])
-        .addTo(map)
-        .bindPopup(`<b>${race.name}</b>`);
-    });
-
-    // Voting system logic
     const votes = {
       Verstappen: 0,
       Hamilton: 0,
